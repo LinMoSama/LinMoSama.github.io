@@ -82,13 +82,6 @@ const geci = `作词 : Fanko
 封面设计：阳阳`
 const geciArr = geci.split('\n')
 
-const ul = document.querySelector('.geci')
-geciArr.forEach((item) => {
-    let li = document.createElement('li')
-    li.innerText = item
-    ul.insertAdjacentElement("beforeend", li)
-
-})
 
 
 const btn = document.querySelector('#btn');
@@ -96,4 +89,11 @@ const mask = document.querySelector('.mask');
 btn.addEventListener('click', () => {
     mask.style.display = 'none';
     document.querySelector('#music').play();
+    const ul = document.querySelector('.geci')
+    geciArr.forEach((item) => {
+        let li = document.createElement('li')
+        li.innerText = item
+        ul.insertAdjacentElement("beforeend", li)
+    })
+
 })
