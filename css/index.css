@@ -1,77 +1,157 @@
 * {
-  margin: 0;
-  padding: 0;
-  color: #ccc;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    user-select: none;
+}
+
+.mask {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1;
+
+}
+
+button {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px;
+    color: #06ee99;
+}
+
+.tips {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.tips img {
+    width: 100%;
 }
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  background: url("../images/shenhe.jpeg")center;
-  background-size: contain;
+    width: 100%;
+    height: 100%;
+    background: url("../images/艺术海.png") center;
+    background-size: cover;
 }
 
 header {
-  overflow: hidden;
+    display: flex;
 }
 
 header .header_title {
-  margin-top: 20px;
-  text-align: center;
-  color: #ffb6c1;
-  font-size: 25px;
+    position: relative;
+    margin: 60px auto 0;
+    font-size: 55px;
+}
+
+
+header .header_title::after {
+    content: "Welcome to Crush's WebSite";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 53px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #06ee99;
+    animation: ani 8s linear infinite;
+    filter: drop-shadow(0px 0px 20px #fac);
+}
+
+@keyframes ani {
+    from {}
+
+    to {
+        width: 106%;
+    }
 }
 
 main .music {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  /* background-color: #F1F3F4; */
-  border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    /* background-color: #F1F3F4; */
+    border-radius: 10px;
 }
 
 main .music .music_name {
-  padding-top: 10px;
-  overflow: hidden;
+    padding-top: 10px;
+    overflow: hidden;
 }
+
 main .music .music_name span {
-  display: inline-block;
-  color: #fa8072;
-  animation: d infinite 10s reverse linear;
+    display: inline-block;
+    color: #fa8072;
+    animation: d infinite 10s reverse linear;
 }
 
 @keyframes d {
-  0% {
-    transform: translateX(-100%);
-  }
+    0% {
+        transform: translateX(-100%);
+    }
 
-  100% {
-    transform: translateX(240%);
-  }
+    100% {
+        transform: translateX(140%);
+    }
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
 }
 
 .footer_title {
-  width: 100%;
-  color: #ffb6c1;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
+    color: #ccc;
+    margin: auto;
+    position: relative;
+}
+
+.footer_title::after {
+    content: "To Be Continue...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #06ee99;
+    animation: ani 8s linear infinite;
+    filter: drop-shadow(0px 0px 10px #ffb6c1);
 }
 
 @media (max-width: 768px) {
-  body {
-    background: url("../images/shenhe.jpeg")center;
-    background-size: cover;
-  }
+    body {
+        background-position: -60px center;
+    }
 
-  .footer_title {
-    text-align: center;
-  }
+    header .header_title {
+        font-size: 20px;
+    }
+
+    .mask .tips {
+        width: 150px;
+        height: 150px;
+        ;
+    }
 }
